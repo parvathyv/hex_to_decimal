@@ -24,16 +24,16 @@
      }
 
      sum = 0
-     number = number.reverse.split('').map!{|x| x.upcase if x=x.downcase }
+     number = number.reverse.split('').map! { |x| x.upcase if x = x.downcase }
      index_hash = Hash.new { |h,k| h[k] = [] }
 
      number.each_with_index do |val, i|
        index_hash[val] << i
      end
 
-     index_hash.each do |key,value|
+     index_hash.each do |key, value|
        value.each do |n|
-         sum+=conversion_hash[key].to_i*16**n
+         sum += conversion_hash[key].to_i * 16 ** n
          puts sum
        end
      end
